@@ -30,11 +30,6 @@ sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.co
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc -y
 sudo dnf install brave-browser -y
 
-# Node NVM
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-nvm install --lts
-nvm use --lts
-
 # cht
 curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh && sudo chmod +x /usr/local/bin/cht.sh
 cp -r .zsh.d ~/
@@ -110,3 +105,11 @@ ln -nfs .zshrc ~/.zshrc
 ln -nfs .tmux.conf ~/.tmux.conf
 ln -nfs micro/bindings.json ~/.config/micro/bindings.json
 sudo ln -nfs keyd/default.conf /etc/keyd/default.conf
+
+# Node NVM
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+source ~/.zshrc
+nvm install --lts
+nvm use --lts
+
+echo "Done! reboot your system"
