@@ -3,6 +3,9 @@
 # This script is meant to be run after the installation of the Fedora Workstation
 # It will install some packages and configure some settings
 
+# Exit immediately if any command exits with a non-zero status
+set -e
+
 echo "Starting post-installation script..."
 # First, optimize the dnf package manager
 echo "Optimizing the package manager..."
@@ -55,12 +58,14 @@ sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
+# Install Rust
+echo "Installing Rust..."
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 #Install some packages
 echo "Installing some packages..."
 sudo dnf copr enable atim/gping -y && sudo dnf install gping -y
-sudo dnf install -y python3-pip tmux neofetch zsh libgtop2-devel lm_sensors grc solaar lsd fd-find procs \
-drawing gnome-tweaks gnome-extensions-app gnome-password-generator expect editorconfig wl-clipboard @virtualization btop lazygit ffmpeg \
-youtube-dl libpam.so.0 git-delta autojump-zsh bat fzf micro rust cargo cmatrix
+sudo dnf install -y python3-pip tmux neofetch zsh libgtop2-devel lm_sensors grc solaar lsd fd-find procs drawing gnome-tweaks gnome-extensions-app gnome-password-generator expect editorconfig wl-clipboard @virtualization btop lazygit ffmpeg youtube-dl libpam.so.0 git-delta autojump-zsh bat fzf micro cmatrix
 
 # Tmux plugins
 echo "Installing tmux plugins."
