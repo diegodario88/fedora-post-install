@@ -11,7 +11,6 @@ sudo cp dnf.conf /etc/dnf/dnf.conf
 # Ensure the system is up to date
 echo "Updating the system..."
 sudo dnf upgrade -y --refresh
-sudo dnf autoremove -y
 
 # Install RPM Fusion (free & non-free) repositories
 echo "Installing RPM Fusion repositories..."
@@ -27,9 +26,9 @@ io.bassi.Amberol io.dbeaver.DBeaverCommunity io.github.seadve.Mousai org.gnome.B
 
 # Install multimedia codecs
 echo "Installing multimedia codecs..."
-sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
-sudo dnf install lame\* --exclude=lame-devel -y
-sudo dnf group upgrade --with-optional Multimedia
+sudo dnf install -y gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel
+sudo dnf install -y lame\* --exclude=lame-devel
+sudo dnf group upgrade -y --with-optional Multimedia
 
 # Change host name
 echo "Changing hostname..."
@@ -59,7 +58,7 @@ sudo systemctl enable containerd.service
 #Install some packages
 echo "Installing some packages..."
 sudo dnf copr enable atim/gping -y && sudo dnf install gping -y
-sudo dnf install -y tmux zsh libgtop2-devel lm_sensors grc solaar lsd fd-find procs gnome-tweaks gnome-extensions-app expect editorconfig wl-clipboard @virtualization btop lazygit ffmpeg youtube-dl libstdc++-12.2.1-2.fc37.i686 compat-libstdc libpam.so.0 git-delta autojump-zsh bat fzf micro rust cargo cmatrix
+sudo dnf install -y python3-pip tmux zsh libgtop2-devel lm_sensors grc solaar lsd fd-find procs gnome-tweaks gnome-extensions-app expect editorconfig wl-clipboard @virtualization btop lazygit ffmpeg youtube-dl libstdc++-12.2.1-2.fc37.i686 compat-libstdc libpam.so.0 git-delta autojump-zsh bat fzf micro rust cargo cmatrix
 
 # Tmux plugins
 echo "Installing tmux plugins."
