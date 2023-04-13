@@ -83,7 +83,7 @@ unzip JetBrainsMono.zip -d jetbrains
 sudo mv jetbrains /usr/share/fonts/
 rm -rf JetBrainsMono.zip
 # Local fonts for vscode integrated terminal
-sudo cp fonts/* ~/.local/share/fonts/
+sudo cp fonts/* /usr/share/fonts/
 sudo fc-cache -f
 
 # SNX VPN
