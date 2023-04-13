@@ -3,9 +3,6 @@
 # This script is meant to be run after the installation of the Fedora Workstation
 # It will install some packages and configure some settings
 
-# Exit immediately if any command exits with a non-zero status
-set -e
-
 echo "Starting post-installation script..."
 # First, optimize the dnf package manager
 echo "Optimizing the package manager..."
