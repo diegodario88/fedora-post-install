@@ -2,5 +2,5 @@
 
 #### Install
 ```sh
-sudo sh post-install.sh
+./post-install.sh
 ```

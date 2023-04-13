@@ -20,7 +20,7 @@ sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfre
 # Enable Flathub repository and install some softwares
 echo "Installing flatpak softwares..."
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub -y app.drey.Warp ca.desrt.dconf-editor com.belmoussaoui.Obfuscate com.getpostman.Postman com.github.alexkdeveloper.relaxator \
+flatpak install flathub -y app.drey.Warp ca.desrt.dconf-editor com.belmoussaoui.Obfuscate com.getpostman.Postman \
 com.github.huluti.Curtail com.github.micahflee.torbrowser-launcher com.github.tchx84.Flatseal com.stremio.Stremio com.usebottles.bottles de.haeckerfelix.Shortwave \
 io.bassi.Amberol io.dbeaver.DBeaverCommunity io.github.seadve.Mousai org.gnome.Builder org.gnome.World.PikaBackup org.gnome.gitlab.somas.Apostrophe org.videolan.VLC
 
@@ -58,7 +58,9 @@ sudo systemctl enable containerd.service
 #Install some packages
 echo "Installing some packages..."
 sudo dnf copr enable atim/gping -y && sudo dnf install gping -y
-sudo dnf install -y python3-pip tmux zsh libgtop2-devel lm_sensors grc solaar lsd fd-find procs gnome-tweaks gnome-extensions-app expect editorconfig wl-clipboard @virtualization btop lazygit ffmpeg youtube-dl libstdc++-12.2.1-2.fc37.i686 compat-libstdc libpam.so.0 git-delta autojump-zsh bat fzf micro rust cargo cmatrix
+sudo dnf install -y python3-pip tmux neofetch zsh libgtop2-devel lm_sensors grc solaar lsd fd-find procs \
+drawing gnome-tweaks gnome-extensions-app gnome-password-generator expect editorconfig wl-clipboard @virtualization btop lazygit ffmpeg \
+youtube-dl libpam.so.0 git-delta autojump-zsh bat fzf micro rust cargo cmatrix
 
 # Tmux plugins
 echo "Installing tmux plugins."
