@@ -74,12 +74,14 @@ git clone https://github.com/joshskidmore/zsh-fzf-history-search ${ZSH_CUSTOM:-$
 
 # Fonts
 echo "Installing fonts..."
+mkdir jetbrains
 curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBrainsMono.zip
-unzip JetBrainsMono.zip
-sudo cp -r JetBrainsMono-*/*.ttf /usr/share/fonts/jetbrains
-rm -rf JetBrainsMono.zip JetBrainsMono-*/
-
+unzip JetBrainsMono.zip -d jetbrains 
+sudo mv jetbrains /usr/share/fonts/
+rm -rf JetBrainsMono.zip
+# Local fonts for vscode integrated terminal
 sudo cp fonts/* ~/.local/share/fonts/
+sudo fc-cache -f
 
 # SNX VPN
 echo "Installing SNX VPN..."
