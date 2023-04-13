@@ -61,6 +61,10 @@ echo "Installing some packages..."
 sudo dnf copr enable atim/gping -y && sudo dnf install gping -y
 sudo dnf install -y tmux zsh libgtop2-devel lm_sensors grc solaar lsd fd-find procs gnome-tweaks gnome-extensions-app expect editorconfig wl-clipboard @virtualization btop lazygit ffmpeg youtube-dl libstdc++-12.2.1-2.fc37.i686 compat-libstdc libpam.so.0 git-delta autojump-zsh bat fzf micro rust cargo cmatrix
 
+# Tmux plugins
+echo "Installing tmux plugins."
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
 # ZSH plugins
 echo "Installing ZSH plugins..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
