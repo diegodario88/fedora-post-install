@@ -2,5 +2,5 @@
 
 #### Install
 ```sh
-pkexec bash post-install.sh
+sudo sh post-install.sh
 ```
