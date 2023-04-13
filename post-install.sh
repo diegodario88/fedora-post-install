@@ -36,8 +36,8 @@ sudo hostnamectl set-hostname "Suindara"
 
 # Install Brave Browser
 echo "Installing Brave Browser..."
-sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/ -y
-sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc -y
+sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.com/x86_64/ 
+sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 sudo dnf install brave-browser -y
 
 # cht
@@ -47,8 +47,8 @@ cp -r .zsh.d ~/
 
 #Install Docker
 echo "Installing Docker..."
-sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo -y
-sudo dnf install docker-ce docker-ce-cli containerd.io docker-compose -y
+sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
+sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-compose
 sudo systemctl start docker
 sudo groupadd docker
 sudo usermod -aG docker $USER
