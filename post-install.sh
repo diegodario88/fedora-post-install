@@ -127,6 +127,8 @@ cp -r micro ~/.config/
 sudo cp -r /etc/ keyd
 cp -r .zshrc .zsh_history .tmux.conf .gitconfig .git-credentials .ssh .gnupg ~/
 cp -r DBeaverData ~/.local/share/
+cp  monitors.xml ~/.config/monitors.xml
+sudo monitors.xml /var/lib/gdm/.config/
 dconf load / < dconf-backup.ini
 
 # Linking
