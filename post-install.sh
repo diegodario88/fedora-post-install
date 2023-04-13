@@ -94,6 +94,10 @@ sudo dnf install code -y
 echo "Installing GPT..."
 pip install shell-gpt --upgrade --no-cache
 
+# Dynamic wallpapers
+echo "Installing Dynamic wallpapers..."
+curl -s "https://raw.githubusercontent.com/saint-13/Linux_Dynamic_Wallpapers/main/Easy_Install.sh" | sudo bash
+
 # Gnome extensions
 echo "Installing Gnome extensions..."
 gnome-extensions install weatheroclock@CleoMenezesJr.github.io Vitals@CoreCoding.com snx-vpn-indicator@diegodario88.github.io gestureImprovements@gestures ddterm@amezin.github.com
@@ -119,6 +123,7 @@ cp -r micro ~/.config/
 sudo cp -r /etc/ keyd
 cp -r .zshrc .zsh_history .tmux.conf .gitconfig .git-credentials .ssh .gnupg ~/
 cp -r DBeaverData ~/.local/share/
+dconf load / < dconf-backup.ini
 
 # Linking
 echo "Linking..."
