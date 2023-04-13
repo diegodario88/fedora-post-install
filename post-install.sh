@@ -14,8 +14,11 @@ sudo dnf autoremove -y
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
 sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 
-# Enable Flathub repository
+# Enable Flathub repository and install some softwares
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub -y app.drey.Warp ca.desrt.dconf-editor com.belmoussaoui.Obfuscate com.getpostman.Postman com.github.alexkdeveloper.relaxator \
+com.github.huluti.Curtail com.github.micahflee.torbrowser-launcher com.github.tchx84.Flatseal com.stremio.Stremio com.usebottles.bottles de.haeckerfelix.Shortwave \
+io.bassi.Amberol io.dbeaver.DBeaverCommunity io.github.seadve.Mousai org.gnome.Builder org.gnome.World.PikaBackup org.gnome.gitlab.somas.Apostrophe org.videolan.VLC
 
 # Install multimedia codecs
 sudo dnf install gstreamer1-plugins-{bad-\*,good-\*,base} gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
@@ -61,7 +64,6 @@ sudo cp -r JetBrainsMono-*/*.ttf /usr/share/fonts/jetbrains
 rm -rf JetBrainsMono.zip JetBrainsMono-*/
 
 sudo cp fonts/* ~/.local/share/fonts/
-
 
 # SNX VPN
 sudo dnf install -y libstdc++.i686 libX11.i686 libpamtest.i686 libnsl.i686
