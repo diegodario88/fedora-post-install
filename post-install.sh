@@ -54,9 +54,9 @@ sudo usermod -aG docker $USER
 sudo systemctl enable docker.service
 sudo systemctl enable containerd.service
 
-# Install Rust
+# Install Rust without user input
 echo "Installing Rust..."
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+yes 1 | curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #Install some packages
 echo "Installing some packages..."
@@ -113,7 +113,7 @@ gnome-extensions install weatheroclock@CleoMenezesJr.github.io Vitals@CoreCoding
 
 # Keyd
 echo "Installing Keyd..."
-folder_path="~/repos/keyd"
+folder_path="$HOME/repos/keyd"
 mkdir -p "$folder_path"
 git clone https://github.com/rvaiya/keyd "$folder_path"
 cd "$folder_path"
@@ -133,16 +133,8 @@ sudo cp -r /etc/ keyd
 cp -r .snxrc .zshrc .zsh_history .tmux.conf .gitconfig .git-credentials .ssh .gnupg ~/
 cp -r DBeaverData ~/.local/share/
 cp  monitors.xml ~/.config/monitors.xml
-sudo monitors.xml /var/lib/gdm/.config/
-dconf load / < dconf-backup.ini
-
-# Linking
-echo "Linking..."
-ln -nfs .gitconfig ~/.gitconfig
-ln -nfs .zshrc ~/.zshrc
-ln -nfs .tmux.conf ~/.tmux.conf
-ln -nfs micro/bindings.json ~/.config/micro/bindings.json
-sudo ln -nfs keyd/default.conf /etc/keyd/default.conf
+sudo cp monitors.xml /var/lib/gdm/.config/
+sudo dconf load / < dconf-backup.ini
 
 # Node NVM
 echo "Installing Node NVM..."
