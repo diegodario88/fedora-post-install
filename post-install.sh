@@ -139,8 +139,5 @@ sudo dconf load / < dconf-backup.ini
 # Node NVM
 echo "Installing Node NVM..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-source ~/.zshrc
-nvm install --lts
-nvm use --lts
 
 echo "Done! reboot your system"
