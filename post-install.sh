@@ -91,7 +91,7 @@ sudo fc-cache -f
 echo "Installing SNX VPN..."
 sudo dnf install -y libstdc++.i686 libX11.i686 libpamtest.i686 libnsl.i686
 sudo dnf install -y snx/compat-libstdc++-33-3.2.3-72.el7.i686.rpm
-./snx/snx_install_linux30.sh
+sh -c snx/snx_install_linux30.sh
 
 # VSCODE
 echo "Installing VSCODE..."
