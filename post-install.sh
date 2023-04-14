@@ -264,7 +264,7 @@ echo "$PWD"
 ls
 cp -r micro ~/.config/
 sudo cp -r keyd /etc/ 
-cp -r .snxrc .zshrc .zsh_history .tmux.conf .gitconfig .git-credentials .ssh .gnupg ~/
+cp -r .snxrc .zshrc .p10k.zsh .zsh_history .tmux.conf .gitconfig .git-credentials .ssh .gnupg ~/
 cp -r DBeaverData ~/.local/share/
 cp  monitors.xml ~/.config/
 sudo cp monitors.xml /var/lib/gdm/.config/
