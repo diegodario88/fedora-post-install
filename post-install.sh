@@ -91,7 +91,7 @@ sudo fc-cache -f
 echo "Installing SNX VPN..."
 sudo dnf install -y libstdc++.i686 libX11.i686 libpamtest.i686 libnsl.i686
 sudo dnf install -y snx/compat-libstdc++-33-3.2.3-72.el7.i686.rpm
-sh -c snx/snx_install_linux30.sh
+sudo sh -c snx/snx_install_linux30.sh
 
 # VSCODE
 echo "Installing VSCODE..."
@@ -118,7 +118,7 @@ mkdir -p "$folder_path"
 git clone https://github.com/rvaiya/keyd "$folder_path"
 cd "$folder_path"
 echo "$PWD"
-make && sudo make install -y
+make && sudo make install
 sudo systemctl enable keyd
 cd ..
 echo "$PWD"
@@ -130,7 +130,7 @@ cd dotfiles
 echo "$PWD"
 cp -r micro ~/.config/
 sudo cp -r /etc/ keyd
-cp -r .zshrc .zsh_history .tmux.conf .gitconfig .git-credentials .ssh .gnupg ~/
+cp -r .snxrc .zshrc .zsh_history .tmux.conf .gitconfig .git-credentials .ssh .gnupg ~/
 cp -r DBeaverData ~/.local/share/
 cp  monitors.xml ~/.config/monitors.xml
 sudo monitors.xml /var/lib/gdm/.config/
