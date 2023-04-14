@@ -20,9 +20,9 @@ sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfre
 # Enable Flathub repository and install some softwares
 echo "Installing flatpak softwares..."
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak install flathub -y app.drey.Warp ca.desrt.dconf-editor com.belmoussaoui.Obfuscate com.getpostman.Postman \
-com.github.huluti.Curtail com.github.micahflee.torbrowser-launcher com.github.tchx84.Flatseal com.stremio.Stremio com.usebottles.bottles de.haeckerfelix.Shortwave \
-io.bassi.Amberol io.dbeaver.DBeaverCommunity io.github.seadve.Mousai org.gnome.Builder org.gnome.World.PikaBackup org.gnome.gitlab.somas.Apostrophe org.videolan.VLC
+flatpak install flathub -y  com.getpostman.Postman com.github.huluti.Curtail com.github.micahflee.torbrowser-launcher \
+com.github.tchx84.Flatseal com.stremio.Stremio com.usebottles.bottles de.haeckerfelix.Shortwave \
+io.bassi.Amberol io.dbeaver.DBeaverCommunity  org.gnome.World.PikaBackup org.gnome.gitlab.somas.Apostrophe org.videolan.VLC
 
 # Install multimedia codecs
 echo "Installing multimedia codecs..."
