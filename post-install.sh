@@ -56,7 +56,7 @@ sudo systemctl enable containerd.service
 
 # Install Rust without user input
 echo "Installing Rust..."
-yes 1 | curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 #Install some packages
 echo "Installing some packages..."
