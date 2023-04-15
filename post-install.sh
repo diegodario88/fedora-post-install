@@ -22,7 +22,7 @@ echo "Installing flatpak softwares..."
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub -y com.getpostman.Postman com.github.huluti.Curtail com.github.micahflee.torbrowser-launcher \
 com.github.tchx84.Flatseal com.usebottles.bottles de.haeckerfelix.Shortwave io.bassi.Amberol io.dbeaver.DBeaverCommunity \
-org.gnome.World.PikaBackup org.gnome.gitlab.somas.Apostrophe org.videolan.VLC
+org.gnome.World.PikaBackup org.gnome.gitlab.somas.Apostrophe org.videolan.VLC com.github.flxzt.rnote
 
 # Install multimedia codecs
 echo "Installing multimedia codecs..."
@@ -64,7 +64,7 @@ sudo dnf copr enable atim/lazygit -y && sudo dnf install lazygit -y
 sudo dnf copr enable atim/gping -y && sudo dnf install gping -y
 
 sudo dnf install -y python3-pip tmux neofetch zsh libgtop2-devel lm_sensors grc solaar lsd \
-fd-find procs drawing gnome-tweaks gnome-extensions-app gnome-password-generator expect editorconfig \
+fd-find procs gnome-tweaks gnome-extensions-app gnome-password-generator expect editorconfig \
 wl-clipboard @virtualization btop ffmpeg youtube-dl libpam.so.0 git-delta autojump-zsh bat fzf micro cmatrix \
 ffmpeg ffmpeg-libs libva libva-utils
 
