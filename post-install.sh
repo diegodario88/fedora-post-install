@@ -66,7 +66,7 @@ sudo dnf copr enable atim/gping -y && sudo dnf install gping -y
 sudo dnf install -y python3-pip tmux neofetch zsh libgtop2-devel lm_sensors grc solaar lsd \
 fd-find procs gnome-tweaks gnome-extensions-app gnome-password-generator expect editorconfig \
 wl-clipboard @virtualization btop ffmpeg youtube-dl libpam.so.0 git-delta autojump-zsh bat fzf cmatrix \
-ffmpeg ffmpeg-libs libva libva-utils allacritty
+ffmpeg ffmpeg-libs libva libva-utils alacritty
 
 # Tmux plugins
 echo "Installing tmux plugins."
