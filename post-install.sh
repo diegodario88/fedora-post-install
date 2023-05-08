@@ -22,7 +22,7 @@ echo "Installing flatpak softwares..."
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub -y com.getpostman.Postman com.github.huluti.Curtail com.github.micahflee.torbrowser-launcher \
 com.github.tchx84.Flatseal com.usebottles.bottles de.haeckerfelix.Shortwave io.bassi.Amberol io.dbeaver.DBeaverCommunity \
-org.gnome.World.PikaBackup org.gnome.gitlab.somas.Apostrophe org.videolan.VLC com.github.flxzt.rnote
+org.gnome.World.PikaBackup org.gnome.gitlab.somas.Apostrophe org.videolan.VLC com.github.flxzt.rnote org.gnome.seahorse.Application
 
 # Install multimedia codecs
 echo "Installing multimedia codecs..."
@@ -65,8 +65,8 @@ sudo dnf copr enable atim/gping -y && sudo dnf install gping -y
 
 sudo dnf install -y python3-pip tmux neofetch zsh libgtop2-devel lm_sensors grc solaar lsd \
 fd-find procs gnome-tweaks gnome-extensions-app gnome-password-generator expect editorconfig \
-wl-clipboard @virtualization btop ffmpeg youtube-dl libpam.so.0 git-delta autojump-zsh bat fzf micro cmatrix \
-ffmpeg ffmpeg-libs libva libva-utils
+wl-clipboard @virtualization btop ffmpeg youtube-dl libpam.so.0 git-delta autojump-zsh bat fzf cmatrix \
+ffmpeg ffmpeg-libs libva libva-utils allacritty
 
 # Tmux plugins
 echo "Installing tmux plugins."
@@ -118,39 +118,14 @@ gnome-extensions-cli install weatheroclock@CleoMenezesJr.github.io
 gnome-extensions-cli install Vitals@CoreCoding.com
 gnome-extensions-cli install snx-vpn-indicator@diegodario88.github.io
 gnome-extensions-cli install gestureImprovements@gestures
-gnome-extensions-cli install ddterm@amezin.github.com
+gnome-extensions-cli install quake-mode@repsac-by.github.com
 
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm background-color 'rgb(23,20,33)'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm audible-bell false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm background-opacity 1.0
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm command 'custom-command'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm cursor-shape 'block'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm custom-command 'tmux'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm custom-font 'JetBrainsMono Nerd Font 11'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm ddterm-toggle-hotkey "['<Super>Return']"
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm delete-binding 'auto'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm foreground-color 'rgb(208,207,204)'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm hide-animation 'linear'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm hide-when-focus-lost true
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm override-window-animation true
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm palette "['rgb(23,20,33)', 'rgb(192,28,40)', 'rgb(38,162,105)', 'rgb(162,115,76)', 'rgb(18,72,139)', 'rgb(163,71,186)', 'rgb(42,161,179)', 'rgb(208,207,204)', 'rgb(94,92,100)', 'rgb(246,97,81)', 'rgb(51,209,122)', 'rgb(233,173,12)', 'rgb(42,123,222)', 'rgb(192,97,203)', 'rgb(51,199,222)', 'rgb(255,255,255)']"
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm panel-icon-type 'none'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm pointer-autohide true
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm preserve-working-directory true
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm scroll-on-output true
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm scrollback-unlimited true
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm shortcuts-enabled false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm show-scrollbar false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm tab-policy 'never'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm theme-variant 'dark'
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm transparent-background false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm use-system-font false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm use-theme-colors false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm window-maximize true
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm window-resizable false
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/ddterm@amezin.github.com/schemas/ set com.github.amezin.ddterm window-size 1.0
-
-
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode.accelerators quake-mode-accelerator-1 "['<Super>Return']"
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode.apps app-1 'Alacritty.desktop'
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode quake-mode-focusout false
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode quake-mode-height 100
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode quake-mode-width 100
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode quake-mode-tray false
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/gestureImprovements@gestures/schemas/ set org.gnome.shell.extensions.gestureImprovements default-overview-gesture-direction false
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/gestureImprovements@gestures/schemas/ set org.gnome.shell.extensions.gestureImprovements enable-alttab-gesture false
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/gestureImprovements@gestures/schemas/ set org.gnome.shell.extensions.gestureImprovements enable-forward-back-gesture true
@@ -264,9 +239,8 @@ git clone https://github.com/diegodario88/dotfiles
 cd dotfiles
 echo "$PWD"
 ls
-cp -r micro ~/.config/
 sudo cp -r keyd /etc/ 
-cp -r .snxrc .zshrc .p10k.zsh .zsh_history .tmux.conf .gitconfig .git-credentials .ssh .gnupg ~/
+cp -r .snxrc .zshrc .p10k.zsh .zsh_history .alacritty.yml .tmux.conf .gitconfig .git-credentials .ssh .gnupg ~/
 cp -r DBeaverData ~/.local/share/
 cp  monitors.xml ~/.config/
 sudo cp monitors.xml /var/lib/gdm/.config/
