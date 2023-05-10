@@ -40,11 +40,6 @@ sudo dnf config-manager --add-repo https://brave-browser-rpm-release.s3.brave.co
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 sudo dnf install brave-browser -y
 
-# cht
-echo "Installing cht..."
-curl -s https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh && sudo chmod +x /usr/local/bin/cht.sh
-cp -r .zsh.d ~/
-
 #Install Docker
 echo "Installing Docker..."
 sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo
@@ -87,7 +82,6 @@ curl -LO https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/JetBra
 unzip JetBrainsMono.zip -d jetbrains 
 sudo mv jetbrains /usr/share/fonts/
 rm -rf JetBrainsMono.zip
-# Local fonts for vscode integrated terminal
 sudo cp fonts/* /usr/share/fonts/
 sudo fc-cache -f
 
@@ -96,12 +90,6 @@ echo "Installing SNX VPN..."
 sudo dnf install -y libstdc++.i686 libX11.i686 libpamtest.i686 libnsl.i686
 sudo dnf install -y snx/compat-libstdc++-33-3.2.3-72.el7.i686.rpm
 sudo sh -c snx/snx_install_linux30.sh
-
-# VSCODE
-echo "Installing VSCODE..."
-sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
-sudo dnf install code -y
 
 # GPT
 echo "Installing GPT..."
@@ -188,7 +176,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Control><Alt>BackSpace'
 gsettings set org.gnome.shell disable-user-extensions false
 gsettings set org.gnome.shell disabled-extensions "['background-logo@fedorahosted.org']"
-gsettings set org.gnome.shell enabled-extensions "['ddterm@amezin.github.com', 'snx-vpn-indicator@diegodario88.github.io', 'Vitals@CoreCoding.com', 'gestureImprovements@gestures', 'weatheroclock@CleoMenezesJr.github.io']"
+gsettings set org.gnome.shell enabled-extensions "['quake-mode@repsac-by.github.com', 'snx-vpn-indicator@diegodario88.github.io', 'Vitals@CoreCoding.com', 'gestureImprovements@gestures', 'weatheroclock@CleoMenezesJr.github.io']"
 gsettings set org.gnome.shell favorite-apps "['brave-browser.desktop', 'org.gnome.Calendar.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Software.desktop']"
 gsettings set org.gnome.shell.app-switcher current-workspace-only true
 gsettings set org.gnome.shell.keybindings focus-active-notification []
