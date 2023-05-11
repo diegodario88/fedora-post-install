@@ -108,12 +108,13 @@ gnome-extensions-cli install snx-vpn-indicator@diegodario88.github.io
 gnome-extensions-cli install gestureImprovements@gestures
 gnome-extensions-cli install quake-mode@repsac-by.github.com
 
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode.accelerators quake-mode-accelerator-1 "['<Super>Return']"
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode.apps app-1 'Alacritty.desktop'
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode.accelerators:/com/github/repsac-by/quake-mode/ quake-mode-accelerator-1 "['<Super>Return']"
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode.apps:/com/github/repsac-by/quake-mode/  app-1 'Alacritty.desktop'
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode quake-mode-focusout false
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode quake-mode-height 100
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode quake-mode-width 100
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode quake-mode-tray false
+
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/gestureImprovements@gestures/schemas/ set org.gnome.shell.extensions.gestureImprovements default-overview-gesture-direction false
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/gestureImprovements@gestures/schemas/ set org.gnome.shell.extensions.gestureImprovements enable-alttab-gesture false
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/gestureImprovements@gestures/schemas/ set org.gnome.shell.extensions.gestureImprovements enable-forward-back-gesture true
@@ -209,6 +210,10 @@ gsettings set org.gnome.nautilus.preferences search-view 'list-view'
 # Disable extensions 
 gnome-extensions disable background-logo@fedorahosted.org
 
+# Node NVM
+echo "Installing Node NVM..."
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+
 # Keyd
 echo "Installing Keyd..."
 folder_path="$HOME/repos/keyd"
@@ -221,6 +226,9 @@ sudo systemctl enable keyd
 cd ..
 echo "$PWD"
 
+# LunarVIM
+LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
+
 # Dotfiles
 echo "Managing Dotfiles..."
 git clone https://github.com/diegodario88/dotfiles
@@ -230,14 +238,8 @@ ls
 sudo cp -r keyd /etc/ 
 cp -r .snxrc .zshrc .p10k.zsh .zsh_history .alacritty.yml .tmux.conf .gitconfig .git-credentials .ssh .gnupg ~/
 cp -r DBeaverData ~/.local/share/
+cp -r lvim ~/.config/
 cp  monitors.xml ~/.config/
 sudo cp monitors.xml /var/lib/gdm/.config/
-
-# Node NVM
-echo "Installing Node NVM..."
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-
-# LunarVIM
-LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 
 echo "Done! reboot your system"
