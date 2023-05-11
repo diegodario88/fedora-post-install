@@ -61,7 +61,7 @@ sudo dnf copr enable atim/gping -y && sudo dnf install gping -y
 sudo dnf install -y python3-pip tmux neofetch zsh libgtop2-devel lm_sensors grc solaar lsd \
 fd-find procs gnome-tweaks gnome-extensions-app gnome-password-generator expect editorconfig \
 wl-clipboard @virtualization btop ffmpeg youtube-dl libpam.so.0 git-delta autojump-zsh bat fzf cmatrix \
-ffmpeg ffmpeg-libs libva libva-utils alacritty
+ffmpeg ffmpeg-libs libva libva-utils alacritty neovim
 
 # Tmux plugins
 echo "Installing tmux plugins."
@@ -236,5 +236,8 @@ sudo cp monitors.xml /var/lib/gdm/.config/
 # Node NVM
 echo "Installing Node NVM..."
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+
+# LunarVIM
+LV_BRANCH='release-1.3/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh)
 
 echo "Done! reboot your system"
