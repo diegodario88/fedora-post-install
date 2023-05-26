@@ -108,7 +108,7 @@ gnome-extensions-cli install snx-vpn-indicator@diegodario88.github.io
 gnome-extensions-cli install gestureImprovements@gestures
 gnome-extensions-cli install quake-mode@repsac-by.github.com
 
-gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode.accelerators:/com/github/repsac-by/quake-mode/ quake-mode-accelerator-1 "['<Control>Return']"
+gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode.accelerators:/com/github/repsac-by/quake-mode/ quake-mode-accelerator-1 "['<Super>Return']"
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode.apps:/com/github/repsac-by/quake-mode/  app-1 'Alacritty.desktop'
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode quake-mode-focusout false
 gsettings --schemadir ~/.local/share/gnome-shell/extensions/quake-mode@repsac-by.github.com/schemas/ set com.github.repsac-by.quake-mode quake-mode-height 100
